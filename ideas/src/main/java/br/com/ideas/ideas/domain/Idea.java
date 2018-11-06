@@ -1,16 +1,18 @@
-package br.com.ideas.ideas.model;
+package br.com.ideas.ideas.domain;
 
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Data
 @Entity
 public class Idea {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private int id;
 
     private String title;
@@ -18,4 +20,6 @@ public class Idea {
     private String description;
 
     private String humor;
+
+    private String date;
 }

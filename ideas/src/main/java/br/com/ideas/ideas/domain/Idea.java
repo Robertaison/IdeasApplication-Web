@@ -21,5 +21,5 @@ public class Idea {
 
     private String humor;
 
-    private String date;
+    private Date date;
 }

@@ -1,0 +1,28 @@
+@font-face{
+    font-family: touch;
+    src: url(../fonts/orange.ttf);
+}
+
+body {
+    background-color: aqua;
+    background-image: url(../images/brain.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 125px;
+}
+
+
+.tittle{
+    font-family: touch;
+}
+
+.button-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.create-button{
+    margin-right: 200px;
+}
+

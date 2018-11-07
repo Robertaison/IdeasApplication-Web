@@ -3,55 +3,136 @@
     src: url(../fonts/orange.ttf);
 }
 
+@font-face{
+    font-family: baloon;
+    src: url(../fonts/LearningCurve.ttf);
+}
 body {
     background-color: #a0d0c9;
     background-image: url(../images/brain.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-position-y: 250px;
+    background-position-y: 220px;
     background-attachment: fixed;
+    margin: auto;
 }
 
-.nav-top{
-    padding-top: 10px;
-    background-color: #fdfbd1;
-}
-
-.navbar-up{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0px 10px 20px grey;
+ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
 }
 
 .title{
     font-family: touch;
-    font-size: 50px;
-    width: 45%;
-    text-align: center;
+    font-size: 42px;
+    margin: 0;
 }
 
-.button-center {
-    width: 55%;
-    padding-left: 10px;
+
+.nav {
     display: flex;
-    justify-content: left;
+    background-color: #fdfbd1;
+    box-shadow: 0px 10px 20px grey;
+    padding: 20px 0 10px;
+    position: fixed;
+    width: 100%;
 }
 
-.baloon-body{
-    padding-top: 100px;
+@media screen and (max-width: 850px) {
+    .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .nav-itens{
+        padding: 5px;
+    }
+}
+
+.nav-itens {
+    width: 33.33%;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.baloon-1{
-    width: 50%;
-    padding-left: 5%;
+.create-button {
+        color: #28a745;
+        background-color: transparent;
+        border-color: #28a745;
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        border: 1px solid #28a745;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        border-radius: .25rem;
 }
 
-.baloon-2{
-    width: 50%;
-    padding-top: 200px;
-    padding-left: 25%;
+.create-button:hover {
+    background-color: #28a745;
+    color: #fff;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    cursor: pointer;
+}
+
+.baloons-container {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row;
+    flex-wrap: wrap;
+    padding-top: 150px;
+}
+
+@media screen and (max-width: 850px) {
+    .baloons-container{
+        padding-top: 250px;
+    }
+}
+
+.baloons-content{
+    padding: 50px;
+}
+
+.baloon {
+    font-family: baloon;
+    font-size: 20px;
+    width: 550px;
+    height: 360px;
+    background-image: url(../images/ballon.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0 50px;
+}
+
+.baloon-title{
+    text-align: left;
+    padding: 50px 15px 0 180px;
+    margin: 0;
+}
+
+@media screen and (max-width: 650px) {
+    .baloon-title{
+        padding: 50px 15px 0 140px;
+        margin: 0;
+    }
+}
+
+.baloon-description{
+    padding: 20px 60px;
+    font-size: x-large;
+}
+
+@media screen and (max-width: 650px) {
+    .baloon-description{
+        font-size: large;
+    }
 }

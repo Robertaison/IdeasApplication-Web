@@ -40,20 +40,25 @@ ul {
     width: 100%;
 }
 
-@media screen and (max-width: 850px) {
+@media  (max-width: 850px) {
     .nav {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 }
 
-@media screen and (max-width: 850px) {
+@media  (max-width: 850px) {
     .nav-itens{
         padding: 5px;
     }
+    .nav-itens:first-of-type{
+        width: 100%;
+    }
 }
+
 
 .nav-itens {
     width: 33.33%;
@@ -121,7 +126,7 @@ ul {
 
 @media screen and (max-width: 650px) {
     .baloon-title{
-        padding: 50px 15px 0 140px;
+        padding: 50px 15px 0 155px;
         margin: 0;
     }
 }

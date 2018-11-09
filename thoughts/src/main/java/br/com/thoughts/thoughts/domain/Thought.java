@@ -1,19 +1,20 @@
-package br.com.ideas.ideas.domain;
+package br.com.thoughts.thoughts.domain;
 
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
-@Data
 @Entity
-public class Idea {
+@Data
+public class Thought {
 
     @Id
-    @GeneratedValue
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String title;
 
@@ -21,5 +22,5 @@ public class Idea {
 
     private String humor;
 
-    private Date date;
+    private Date data;
 }

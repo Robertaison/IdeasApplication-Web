@@ -124,10 +124,19 @@ ul {
     margin: 0;
 }
 
-@media screen and (max-width: 650px) {
+/* @media screen and (max-width: 650px) {
     .baloon-title{
         padding: 50px 15px 0 155px;
         margin: 0;
+        font-size: inherit; 
+    }  
+} */
+
+@media screen and (max-width: 560px) {
+    .baloon-title{
+        padding: 50px 15px 0 155px;
+        margin: 0;
+        font-size: xx-small;
     }
 }
 
@@ -141,3 +150,9 @@ ul {
         font-size: large;
     }
 }
+
+/* @media screen and (max-width: 560) {
+    .baloon-description{
+        padding: 0px 45px 0px 50px;
+    }
+} */

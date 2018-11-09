@@ -1,12 +1,12 @@
-package br.com.ideas.ideas;
+package br.com.thoughts.thoughts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IdeasApplication {
+public class ThoughtsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(IdeasApplication.class, args);
+		SpringApplication.run(ThoughtsApplication.class, args);
 	}
 }

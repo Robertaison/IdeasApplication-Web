@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class ThoughtService {
 
@@ -14,7 +16,6 @@ public class ThoughtService {
 
     @Transactional
     public Long save(final Thought thought) {
-//        log.info("Method=save, activityRequest={}", activityRequest);
 
         Thought toPersist = thought;
 
@@ -24,7 +25,6 @@ public class ThoughtService {
     }
 
     public Thought findById(final Long id){
-//        log.info("Method=findById, id={}", id);
 
         Thought thought =   retriveThoughtById(id);
         return thought;
@@ -38,5 +38,14 @@ public class ThoughtService {
     @Transactional
     public Thought persist (final Thought thought){
         return thoughtRepository.save(thought);
+    }
+
+    public List<Thought> retrieveAllThoughts() {
+        return thoughtRepository.findAll();
+    }
+
+    @Transactional
+    public void delete(long id) {
+        thoughtRepository.deleteById(id);
     }
 }

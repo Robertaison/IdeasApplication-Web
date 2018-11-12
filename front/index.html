@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
         <meta charset="UTF-8"/>
         <title>SharingThoughts</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style/style.css">
-        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
         
     </head>
     <body>
@@ -15,7 +13,7 @@
             <div class="nav-itens">
                 <h2 class="title">Sharing Thoughts</h2>
             </div>
-            <div class="nav-itens">
+            <div class="nav-itens" id="myBtn">
                 <button class="create-button">Click</button>
             </div>
             <div class="nav-itens"></div>
@@ -46,7 +44,43 @@
                         </div>
                     </div>
             <!-- modal -->
-            
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="modal-header">
+                        <h2>New Thought</h2>
+                    </div>
+                    <div class="form-container">
+                        <div class="input-container title-thought">
+                            <div class="title-post">
+                                <label>Título</label>
+                                <input type="text" class="form-control input-space"  placeholder="title">
+                            </div>
+                            <div class="humor-post"> 
+                                <label>Dropdown</label>
+                                <select>
+                                    <option value="1">Happy</option>
+                                    <option value="1"></option>
+                                    <option value="1"></option>
+                                    <option value="1"></option>
+                                    <option value="1"></option>
+                                    <option value="1"></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <label>Descrição</label>
+                            <input type="text" class="form-control input-space"  placeholder="description">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+              
+            </div>
             <!-- js -->
             <script src="js/scripts.js"></script>
         </div>

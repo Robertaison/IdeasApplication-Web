@@ -24,6 +24,7 @@ public class ThoughtController {
     }
 
     @GetMapping
+    @CrossOrigin("*")
     public List<Thought> findAll() {
         return thoughtService.retrieveAllThoughts();
     }

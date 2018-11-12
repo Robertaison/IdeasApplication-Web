@@ -124,19 +124,19 @@ ul {
     margin: 0;
 }
 
-/* @media screen and (max-width: 650px) {
+ @media screen and (max-width: 600px) {
     .baloon-title{
         padding: 50px 15px 0 155px;
         margin: 0;
         font-size: inherit; 
     }  
-} */
+} 
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 520px) {
     .baloon-title{
-        padding: 50px 15px 0 155px;
+        padding: 40px 15px 0 130px;
         margin: 0;
-        font-size: xx-small;
+        font-size: inherit;
     }
 }
 
@@ -145,14 +145,15 @@ ul {
     font-size: x-large;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 600px) {
     .baloon-description{
         font-size: large;
     }
 }
 
-/* @media screen and (max-width: 560) {
+ @media screen and (max-width: 520px) {
     .baloon-description{
-        padding: 0px 45px 0px 50px;
+        padding: 0px 45px 0px 60px;
+        font-size: medium;
     }
-} */
+} 

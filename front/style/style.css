@@ -129,7 +129,7 @@ ul {
     font-size: x-large;
 }
 
- @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .baloon-title{
         padding: 50px 15px 0 155px;
         margin: 0;
@@ -168,14 +168,13 @@ ul {
 
 /* The Modal (background) */
 .modal {
-    display: block; /* Hidden by default */
+    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
@@ -318,3 +317,18 @@ input {
 .input-space{
     margin-top: 10px;
 }
+
+/* text-area */
+textarea{  
+    display: block;
+    box-sizing: padding-box;
+    overflow: hidden;
+  
+    padding: 10px;
+    width: 250px;
+    font-size: 14px;
+    margin: 50px auto;
+    border-radius: 6px;
+    box-shadow: 2px 2px 8px rgba(black, .3);
+    border: 0;
+  }

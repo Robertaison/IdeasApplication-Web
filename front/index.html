@@ -18,73 +18,57 @@
             </div>
             <div class="nav-itens"></div>
         </nav>
-        <div class="baloons-container">
+        <div class="baloon-container">
             <div class="baloon">
-                <div class="baloon-content">
-                    <ul>
-                        <h1 class="baloon-title">Plantando novidades</h1>
-                        <li class="baloon-description">Pouco conhecimento faz com que as pessoas se sintam orgulhosas. Muito conhecimento, que se sintam humildes. É assim que as espigas sem grãos erguem desdenhosamente a cabeça para o Céu, enquanto que as cheias as baixam para a terra, sua mãe.</li>
-                    </ul>
+                <div class="baloon-content">            
+                    <h1 class="baloon-title">Plantando novidades</h1>
+                    <p id="aqui" class="baloon-description"></p>
+                    <a onclick="myFunction()">
+                        <img src="./images/menu.png" alt="" class="menu-modal">
+                    </a>
                 </div>
             </div>
-            <div class="baloon">
-                    <div class="baloon-content">
-                        <ul>
-                            <h1 class="baloon-title">Plantando novidades</h1>
-                            <li class="baloon-description">Pouco conhecimento faz com que as pessoas se sintam orgulhosas. Muito conhecimento, que se sintam humildes. É assim que as espigas sem grãos erguem desdenhosamente a cabeça para o Céu, enquanto que as cheias as baixam para a terra, sua mãe.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="baloon">
-                        <div class="baloon-content">
-                            <ul>
-                                <h1 class="baloon-title">Plantando novidades</h1>
-                                <li class="baloon-description">Pouco conhecimento faz com que as pessoas se sintam orgulhosas. Muito conhecimento, que se sintam humildes. É assim que as espigas sem grãos erguem desdenhosamente a cabeça para o Céu, enquanto que as cheias as baixam para a terra, sua mãe.</li>
-                            </ul>
-                        </div>
-                    </div>
-            <!-- modal -->
-            <div id="myModal" class="modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="modal-header">
-                        <h2>New Thought</h2>
-                    </div>
-                    <div class="form-container">
-                        <div class="input-container title-thought">
-                            <div class="title-post">
-                                <label>Título</label>
-                                <input type="text" class="form-control input-space"  placeholder="title">
-                            </div>
-                            <div class="humor-post"> 
-                                <label>Dropdown</label>
-                                <select>
-                                    <option value="1">ApaixonadU pelU DenIs</option>
-                                    <option value="1">Feliz</option>
-                                    <option value="2">Animado</option>
-                                    <option value="3">Reflexivo</option>
-                                    <option value="4">Ansioso</option>
-                                    <option value="5">Angustiado</option>
-                                    <option value="6">Triste</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="input-container">
-                            <label>Descrição</label>
-                            <textarea class='autoExpand' rows='3' data-min-rows='3' placeholder='Auto-Expanding Textarea'></textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-              
-            </div>
-            <!-- js -->
-            <script src="js/scripts.js"></script>
         </div>
+        <!-- modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="modal-header">
+                    <h2>New Thought</h2>
+                </div>
+                <div class="form-container">
+                    <div class="input-container title-thought">
+                        <div class="title-post">
+                            <label>Título</label>
+                            <input type="text" class="form-control input-space"  placeholder="title">
+                        </div>
+                    <div class="humor-post"> 
+                    <label>Dropdown</label>
+                        <select>
+                            <option value="1">ApaixonadU pelU DenIs</option>
+                            <option value="1">Feliz</option>
+                            <option value="2">Animado</option>
+                            <option value="3">Reflexivo</option>
+                            <option value="4">Ansioso</option>
+                            <option value="5">Angustiado</option>
+                            <option value="6">Triste</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-container">
+                        <label>Descrição</label>
+                        <textarea class='autoExpand' rows='3' data-min-rows='3' placeholder='Auto-Expanding Textarea'></textarea>
+                </div>
+            </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">Save changes</button>
+                </div>
+            </div>      
+        </div>
+        <!-- js -->
+        <script src="js/scripts.js"></script>
     </body>
 </html>
 

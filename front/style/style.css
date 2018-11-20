@@ -89,7 +89,7 @@ ul {
     cursor: pointer;
 }
 
-.baloons-container {
+.baloon-container {
     display: flex;
     justify-content: space-around;
     flex-flow: row;
@@ -98,16 +98,15 @@ ul {
 }
 
 @media screen and (max-width: 850px) {
-    .baloons-container{
+    .baloon-container{
         padding-top: 250px;
     }
 }
 
-.baloons-content{
-    padding: 50px;
-}
-
 .baloon {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     font-family: baloon;
     font-size: 20px;
     width: 550px;
@@ -119,40 +118,38 @@ ul {
 }
 
 .baloon-title{
-    text-align: left;
-    padding: 50px 15px 0 180px;
-    margin: 0;
+    margin-top: 50px;
 }
 
 .baloon-description{
-    padding: 20px 60px;
     font-size: x-large;
+    padding: 0px 50px 0px 50px;
+    margin: 0px;
+    width: 80%;
+    height: 130px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
     .baloon-title{
-        padding: 50px 15px 0 155px;
-        margin: 0;
-        font-size: inherit; 
+        font-size: xx-large;
     }
     .baloon-description{
-        font-size: large;
+        height: 110px;
+        font-size: inherit;
     }  
 } 
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 560px) {
     .baloon-title{
-        padding: 40px 15px 0 130px;
-        margin: 0;
-        font-size: inherit;
+        font-size: larger;
     }
     .baloon-description{
-        padding: 0px 45px 0px 60px;
-        font-size: medium;
+        font-size: initial;
+        height: 80px;
     }
 }
 
-
+/*
 @media screen and (max-width: 435px) {
     .baloon-title{
         padding: 40px 0px 0px 120px;
@@ -162,7 +159,7 @@ ul {
         padding: 0px 45px 0px 60px;
         font-size: medium;
     }
-}
+} */
 
 /* modal */
 
@@ -203,6 +200,14 @@ ul {
 
 .modal-body{
 
+}
+
+.menu-modal{
+    width: 10%;
+}
+
+.menu-modal:hover{
+    cursor: pointer;
 }
 
 /* footer */
@@ -323,12 +328,9 @@ textarea{
     display: block;
     box-sizing: padding-box;
     overflow: hidden;
-  
-    padding: 10px;
-    width: 250px;
+    margin-top: 15px;
+    width: 100%;
     font-size: 14px;
-    margin: 50px auto;
     border-radius: 6px;
     box-shadow: 2px 2px 8px rgba(black, .3);
-    border: 0;
   }

@@ -19,6 +19,7 @@ public class ThoughtController {
     private ThoughtService thoughtService;
 
     @GetMapping("/{id}")
+    @CrossOrigin("*")
     public Thought findById(@PathVariable final Long id) {
         return thoughtService.findById(id);
     }

@@ -19,13 +19,11 @@ public class ThoughtController {
     private ThoughtService thoughtService;
 
     @GetMapping("/{id}")
-    @CrossOrigin("*")
     public Thought findById(@PathVariable final Long id) {
         return thoughtService.findById(id);
     }
 
     @GetMapping
-    @CrossOrigin("*")
     public List<Thought> findAll() {
         return thoughtService.retrieveAllThoughts();
     }

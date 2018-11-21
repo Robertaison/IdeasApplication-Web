@@ -329,7 +329,8 @@ textarea{
     box-sizing: padding-box;
     overflow: hidden;
     margin-top: 15px;
-    width: 100%;
+    padding: 10px;
+    width: 95%;
     font-size: 14px;
     border-radius: 6px;
     box-shadow: 2px 2px 8px rgba(black, .3);

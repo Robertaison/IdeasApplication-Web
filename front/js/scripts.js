@@ -29,56 +29,67 @@ async function getElements(){
 	teste.appendChild(a);
 }
 
-async function getElementsById(){
-	const res = await fetch('http://localhost:8080/2');
-	const data = await res.json();
-	const dados = data.title;
-	var placeHolder = document.createTextNode(dados);
 
-	var titleBaloon = document.getElementById("title").placeholder = placeHolder;
-	console.log(placeHolder);
-    // var teste = document.getElementById("aqui");
-    // var a = document.createTextNode(dados);
-    // teste.appendChild(a);
+
+// PO TSON AQUI
+
+
+
+async function getElementsById(id) {
+    try {
+        const res = await fetch(`http://localhost:8080/${id}`);
+        const data = await res.json();
+        const dados = data;
+        
+        const input = document.getElementById("title-thought")
+        input.placeholder = dados.title;   
+        const inputDescription = document.getElementById("description-thought")
+        inputDescription.placeholder = dados.description;
+    } catch (error) {
+        alert('Falha ao conectar com o banco!')
+    }
+}
+
+const form = document.getElementById('formulario');
+form.addEventListener('submit', e => {
+	const title = document.getElementById('title').value;
+	const humor = document.getElementById('humorPost').value;
+	const description = document.getElementById('description').value;
+    
+    const data = { title, description, humor };
+	
+	post(data);
+    
+    modal.style.display = 'none';
+
+    e.preventDefault();
+});
+
+function post(data) {
+    try {
+		fetch('http://localhost:8080/', {
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+        });
+        alert('Pronto! Obrigado por colaborar!');
+    } catch (error) {
+        alert('Falha ao conectar com o banco!', error);
+    }
 }
 
 
-var form = document.getElementById('formulario');
-form.addEventListener('submit', function(e) {
-
-	var titlePost = document.getElementById('title').value;
-	var humorPost = document.getElementById('humorPost');
-	var descriptionPost = document.getElementById('description');
-	const title = titlePost.value;
-	// const options = {title: , description: descriptionPost.value, thumor: humorPost.value};
-	
-	// post(options);
-    // alerta o valor do campo
-    alert(title);
-    modal.style.display = "none";
-
-    // impede o envio do form
-    // e.preventDefault();
-});
-
-// function post(objeto){
+// ATE AQUI HEM
 
 
-// 	(async () => {
-// 		const rawResponse = await fetch('http://localhost:8080/', {
-// 			method: 'POST',
-// 			headers: {
-// 				'Accept': 'application/json',
-// 				'Content-Type': 'application/json'
-// 			},
-// 			body: JSON.stringify(objeto)
-// 		});
-// 		const content = await rawResponse.json();
 
-// 		console.log(content);
-// 	})();
-// }
-getElements();
+
+
+
+// getElements();
 
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -97,7 +108,7 @@ btn.onclick = function() {
 }
 
 btnBaloon.onclick = function(){
-	getElementsById();
+    getElementsById(2);
 	modalBaloon.style.display = "block";
 	
 }

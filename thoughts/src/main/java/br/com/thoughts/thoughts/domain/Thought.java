@@ -1,12 +1,10 @@
 package br.com.thoughts.thoughts.domain;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Date;
+import javax.persistence.*;
+import java.util.Calendar;
 
 @Entity
 @Data
@@ -22,5 +20,5 @@ public class Thought {
 
     private String humor;
 
-    private Date data;
+    private String data;
 }

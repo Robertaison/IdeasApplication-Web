@@ -2,6 +2,7 @@ package br.com.thoughts.thoughts.service;
 
 import br.com.thoughts.thoughts.domain.Thought;
 import br.com.thoughts.thoughts.repository.ThoughtRepository;
+import br.com.thoughts.thoughts.utils.GetData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +17,8 @@ public class ThoughtService {
 
     @Transactional
     public Long save(final Thought thought) {
-
+        GetData getData = new GetData();
+        thought.setData(getData.data());
         Thought toPersist = thought;
 
         Thought persistedThought = persist(toPersist);

@@ -1,52 +1,92 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-        <meta charset="UTF-8"/>
-        <title>SharingThoughts</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style/style.css">
-        
-    </head>
-    <body>
-        <nav class="nav"> 
-            <div class="nav-itens">
-                <h2 class="title">Sharing Thoughts</h2>
-            </div>
-            <div class="nav-itens" >
-                <button id="myBtn" class="create-button">Click</button>
-            </div>
-            <div class="nav-itens"></div>
-        </nav>
-        <div class="baloon-container">
-            <div class="baloon">
-                <div class="baloon-content">            
-                    <h1 class="baloon-title">Plantando novidades</h1>
-                    <p id="aqui" class="baloon-description"></p>
-                    <a id="baloonModal">
-                        <img src="./images/menu.png" alt="" class="menu-modal">
-                    </a>
-                </div>
+<head>
+
+    <meta charset="UTF-8"/>
+    <title>SharingThoughts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+<body>
+    <nav class="nav"> 
+        <div class="nav-itens">
+            <h2 class="title">Sharing Thoughts</h2>
+        </div>
+        <div class="nav-itens" >
+            <button id="myBtn" class="create-button">Click</button>
+        </div>
+        <div class="nav-itens"></div>
+    </nav>
+    <div class="baloon-container">
+        <div class="baloon">
+            <div class="baloon-content">            
+                <h1 class="baloon-title">Plantando novidades</h1>
+                <p id="aqui" class="baloon-description"></p>
+                <a id="baloonModal">
+                    <img src="./images/menu.png" alt="" class="menu-modal">
+                </a>
             </div>
         </div>
-        <!-- modal -->
-        <div id="myModal" class="modal">
+    </div>
+    <!-- modal -->
+    <div id="myModal" class="modal">
 
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div class="modal-header">
-                    <h2>New Thought</h2>
-                </div>
-                <div class="form-container">
-                    <form id="formulario">
-                        <div class="input-container title-thought">
-                            <div class="title-post">
-                                <label>Título</label>
-                                <input type="text" class="form-control input-space"  placeholder="title">
-                            </div>
-                            <div class="humor-post"> 
-                                <label>Dropdown</label>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>New Thought</h2>
+            </div>
+            <div class="form-container">
+                <form id="formulario">
+                    <div class="input-container title-thought">
+                        <div class="title-post">
+                            <label>Título</label>
+                            <input id="title" type="text" class="form-control input-space"  placeholder="title">
+                        </div>
+                    </div>
+                    <div class="humor-post"> 
+                        <label>Dropdown</label>
+                        <select id="humorPost">
+                            <option value="Feliz">Feliz</option>
+                            <option value="Animado">Animado</option>
+                            <option value="Reflexivo">Reflexivo</option>
+                            <option value="Ansioso">Ansioso</option>
+                            <option value="Angustiado">Angustiado</option>
+                            <option value="Triste">Triste</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <label>Descrição</label>
+                        <textarea id="description"class='autoExpand' rows='3' data-min-rows='3' placeholder='Auto-Expanding Textarea'></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>   
+            </div>
+        </div>      
+    </div>   
+
+    <!-- baloon-modal -->
+    <div id="myBaloonModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>New Thought</h2>
+            </div>
+            <div class="form-container">
+                <form>
+                    <div class="input-container title-thought">
+                        <div class="title-post">
+                            <label>Título</label>
+                            <input type="text" class="form-control input-space"  placeholder="title">
+                        </div>
+                        <div class="humor-post"> 
+                            <label>Dropdown</label>
                             <select>
                                 <option value="1">ApaixonadU pelU DenIs</option>
                                 <option value="1">Feliz</option>
@@ -56,63 +96,22 @@
                                 <option value="5">Angustiado</option>
                                 <option value="6">Triste</option>
                             </select>
-                            </div>
                         </div>
-                        <div class="input-container">
-                            <label>Descrição</label>
-                            <textarea class='autoExpand' rows='3' data-min-rows='3' placeholder='Auto-Expanding Textarea'></textarea>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Save changes</button>
-                        </div>
+                    </div>
+                    <div class="input-container">
+                        <label>Descrição</label>
+                        <textarea class='autoExpand' rows='3' data-min-rows='3' placeholder='Auto-Expanding Textarea'></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary">Save changes</button>
+                    </div>
                 </form>      
-                </div>
-            </div>      
-        </div>
-
-        <!-- baloon-modal -->
-         <div id="myBaloonModal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div class="modal-header">
-                    <h2>New Thought</h2>
-                </div>
-                <div class="form-container">
-                    <form>
-                        <div class="input-container title-thought">
-                            <div class="title-post">
-                                <label>Título</label>
-                                <input type="text" class="form-control input-space"  placeholder="title">
-                            </div>
-                            <div class="humor-post"> 
-                                <label>Dropdown</label>
-                            <select>
-                                <option value="1">ApaixonadU pelU DenIs</option>
-                                <option value="1">Feliz</option>
-                                <option value="2">Animado</option>
-                                <option value="3">Reflexivo</option>
-                                <option value="4">Ansioso</option>
-                                <option value="5">Angustiado</option>
-                                <option value="6">Triste</option>
-                            </select>
-                            </div>
-                        </div>
-                        <div class="input-container">
-                            <label>Descrição</label>
-                            <textarea class='autoExpand' rows='3' data-min-rows='3' placeholder='Auto-Expanding Textarea'></textarea>
-                        </div>
-                </form>      
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary">Save changes</button>
-                </div>
-            </div>      
-        </div>
-        <!-- js -->
-        <script src="js/scripts.js"></script>
-    </body>
+            </div>
+        </div>      
+    </div>
+    <!-- js -->
+    <script src="js/scripts.js"></script>
+</body>
 </html>
 
 

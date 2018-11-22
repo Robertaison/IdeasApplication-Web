@@ -1,54 +1,49 @@
-// var request = new XMLHttpRequest();
-
-// request.open('GET', 'http://localhost:8080/', true);
-
-// request.onload = function () {
-
-//   // Begin accessing JSON data here
-//   var data = JSON.parse(this.response);
-
-//   if (request.status >= 200 && request.status < 400 && request.status != 500) {
-//     data.forEach(thought => {
-//       console.log(thought.title);
-//     });
-//   } else {
-//     console.log('error');
-//   }
-// }
-
-// request.send();
 
 // getAllElements
 async function getElements(){
 	const res = await fetch('http://localhost:8080/');
 	const data = await res.json();
-	const dados = data[0].description;
+	
+	createBaloon(data);
 
-	var teste = document.getElementById("aqui");
-	var a = document.createTextNode(dados);
-	teste.appendChild(a);
+	var btnBaloons = document.getElementsByClassName("baloon-modal")
+	Array.from(btnBaloons).map(btn => {
+		btn.onclick = () => {
+			getElementsById(btn.dataset.baloon);
+			modalBaloon.style.display = "block";
+		}
+	})
+	
+	// var teste = document.getElementById("aqui");
+	// var a = document.createTextNode(dados);
+	// teste.appendChild(a);
 }
 
 
+getElements();
 
 // PO TSON AQUI
 
 
 
 async function getElementsById(id) {
-    try {
+	try {
         const res = await fetch(`http://localhost:8080/${id}`);
         const data = await res.json();
-        const dados = data;
-        
-        const input = document.getElementById("title-thought")
-        input.placeholder = dados.title;   
-        const inputDescription = document.getElementById("description-thought")
-        inputDescription.placeholder = dados.description;
+		
+		const modalHeader = document.getElementById("title-modal");
+		modalHeader.innerHTML = data.title;
+        const input = document.getElementById("title-thought");
+        input.placeholder = data.title;   
+        const inputDescription = document.getElementById("description-thought");
+		inputDescription.placeholder = data.description;
+		const inputId = document.getElementById('hidden-id');
+		inputId.value = id;
     } catch (error) {
         alert('Falha ao conectar com o banco!')
     }
 }
+
 
 const form = document.getElementById('formulario');
 form.addEventListener('submit', e => {
@@ -59,9 +54,8 @@ form.addEventListener('submit', e => {
     const data = { title, description, humor };
 	
 	post(data);
-    
+    getElements();
     modal.style.display = 'none';
-
     e.preventDefault();
 });
 
@@ -81,15 +75,38 @@ function post(data) {
     }
 }
 
+const deletar = document.getElementById('delete');
+deletar.onclick = function (e){
+	const id = document.getElementById('hidden-id').value;
+	deleteData(id);
+    getElements();
+	e.preventDefault;
+}
 
+function deleteData(id) {
+	return fetch(`http://localhost:8080/${id}`, {
+	  method: 'delete'
+	})
+	.then(response => response.json());
+}
+
+function updateId(id) {
+	try{
+		fetch(`http://localhost:8080/${id}`, {
+			method: 'PATCH',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+        });
+        alert('Alterações feitas com sucesso');
+	}catch{
+		alert('Não foi possível fazer alterações');
+	}
+}
 // ATE AQUI HEM
 
-
-
-
-
-
-// getElements();
 
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -97,26 +114,22 @@ var modalBaloon = document.getElementById('myBaloonModal');
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
-var btnBaloon = document.getElementById("baloonModal");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsByClassName("close");
 
 // When the user clicks on the button, open the modal 
 btn.onclick = function() {
 	modal.style.display = "block";
 }
 
-btnBaloon.onclick = function(){
-    getElementsById(2);
-	modalBaloon.style.display = "block";
-	
-}
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-	modal.style.display = "none";
-	modalBaloon.style.display = "none";
-}
+Array.from(span).map((s) => {
+		s.onclick = function() {
+		modal.style.display = "none";
+		modalBaloon.style.display = "none";
+	}
+})
 
 // When the user clicks anywhere outside of the modal, close it
 modal.onclick = function(event) {
@@ -124,21 +137,38 @@ modal.onclick = function(event) {
     
 	if (event.target !== content && !content.contains(event.target)) {
 		modal.style.display = "none";
-		// modalBaloon.style.display = "none";
 	}
 }
 
-// //modal auto-expand
-// (document)
-// .one('focus.autoExpand', 'textarea.autoExpand', function(){
-// 	var savedValue = this.value;
-// 	this.value = '';
-// 	this.baseScrollHeight = this.scrollHeight;
-// 	this.value = savedValue;
-// })
-// .on('input.autoExpand', 'textarea.autoExpand', function(){
-// 	var minRows = this.getAttribute('data-min-rows')|0, rows;
-// 	this.rows = minRows;
-// 	rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 16);
-// 	this.rows = minRows + rows;
-// });
+modalBaloon.onclick = function(event) {
+    const content = modalBaloon.querySelector('.modal-content');
+    
+	if (event.target !== content && !content.contains(event.target)) {
+		modalBaloon.style.display = "none";
+	}
+}
+
+function createBaloon(data){
+	const listComponent = data.map((item) => {
+		 return (
+			`<div class="baloon">
+            	<div class="baloon-content">            
+					<h1 class="baloon-title">${item.title}</h1>
+					<p id="thought-data">${item.data}</p> 
+                	<p class="baloon-description">${item.description}</p>
+                	<a class="baloon-modal" data-baloon="${item.id}" >
+                 		<img src="./images/menu.png" alt="" class="menu-modal">
+                	</a>
+            	</div>
+       		</div>`
+		 )
+		}).join('')
+	
+	const element = document.getElementById('thought');
+	element.innerHTML = listComponent;
+}
+
+
+
+
+

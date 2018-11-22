@@ -14,20 +14,21 @@
             <h2 class="title">Sharing Thoughts</h2>
         </div>
         <div class="nav-itens" >
-            <button id="myBtn" class="create-button">Click</button>
+            <button id="myBtn" class="create-button">SHARE</button>
         </div>
         <div class="nav-itens"></div>
     </nav>
-    <div class="baloon-container">
-        <div class="baloon">
+    <div id="thought" class="baloon-container">
+        <!-- <div class="baloon">
+            <p id="thought-data">25/25/1990</p> 
             <div class="baloon-content">            
-                <h1 class="baloon-title">Plantando novidades</h1>
-                <p id="aqui" class="baloon-description"></p>
+                <h1 id="thought-title" class="baloon-title">Plantando novidades</h1>
+                <p id="thought-description" class="baloon-description"></p>
                 <a id="baloonModal">
                     <img src="./images/menu.png" alt="" class="menu-modal">
                 </a>
             </div>
-        </div>
+        </div> -->
     </div>
     <!-- modal -->
     <div id="myModal" class="modal">
@@ -36,7 +37,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-header">
-                <h2>New Thought</h2>
+                <h2>Pensamento</h2>
             </div>
             <div class="form-container">
                 <form id="formulario">
@@ -45,24 +46,25 @@
                             <label>Título</label>
                             <input id="title" type="text" class="form-control input-space"  placeholder="title">
                         </div>
+                        <div class="humor-post"> 
+                            <label>Humor</label>
+                            <select id="humorPost" class="select">
+                                <option value="Feliz">Feliz</option>
+                                <option value="Animado">Animado</option>
+                                <option value="Reflexivo">Reflexivo</option>
+                                <option value="Ansioso">Ansioso</option>
+                                <option value="Angustiado">Angustiado</option>
+                                <option value="Triste">Triste</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="humor-post"> 
-                        <label>Dropdown</label>
-                        <select id="humorPost">
-                            <option value="Feliz">Feliz</option>
-                            <option value="Animado">Animado</option>
-                            <option value="Reflexivo">Reflexivo</option>
-                            <option value="Ansioso">Ansioso</option>
-                            <option value="Angustiado">Angustiado</option>
-                            <option value="Triste">Triste</option>
-                        </select>
-                    </div>
+                    
                     <div class="input-container">
                         <label>Descrição</label>
-                        <textarea id="description"class='autoExpand' rows='3' data-min-rows='3' placeholder='Auto-Expanding Textarea'></textarea>
+                        <textarea id="description"class='autoExpand' rows='5' data-min-rows='5' placeholder='Auto-Expanding Textarea'></textarea>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Criar</button>
                     </div>
                 </form>   
             </div>
@@ -76,19 +78,20 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-header">
-                <h2>New Thought</h2>
+                <h2 id="title-modal"></h2>
             </div>
             <div class="form-container">
                 <form id="formulario">
                     <div class="input-container title-thought">
                         <div class="title-post">
                             <label>Título</label>
+
                             <input id="title-thought" type="text" class="form-control input-space"  placeholder="title">
+                            <input type="hidden" id="hidden-id" name="id" value="">
                         </div>
                         <div class="humor-post"> 
-                            <label>Dropdown</label>
-                            <select>
-                                <option value="1">ApaixonadU pelU DenIs</option>
+                            <label>Humor</label>
+                            <select class="select">
                                 <option value="1">Feliz</option>
                                 <option value="2">Animado</option>
                                 <option value="3">Reflexivo</option>
@@ -100,10 +103,11 @@
                     </div>
                     <div class="input-container">
                         <label>Descrição</label>
-                        <textarea id = "description-thought" class='autoExpand' rows='4' data-min-rows='4' placeholder='Auto-Expanding Textarea'></textarea>
+                        <textarea id = "description-thought" class='autoExpand' rows='5' data-min-rows='5' placeholder='Auto-Expanding Textarea'></textarea>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary">Save changes</button>
+                        <button id="delete" type="submit" class="btn btn-secundary">Deletar</button>
+                        <button id="update" class="btn btn-update">Save changes</button>
                     </div>
                 </form>      
             </div>

@@ -1,7 +1,7 @@
-package br.com.thoughts.thoughts.controller;
+package br.com.thoughts.controller;
 
-import br.com.thoughts.thoughts.domain.Thought;
-import br.com.thoughts.thoughts.service.ThoughtService;
+import br.com.thoughts.domain.ThoughtEntity;
+import br.com.thoughts.service.ThoughtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
@@ -19,18 +19,18 @@ public class ThoughtController {
     private ThoughtService thoughtService;
 
     @GetMapping("/{id}")
-    public Thought findById(@PathVariable final Long id) {
+    public ThoughtEntity findById(@PathVariable final Long id) {
         return thoughtService.findById(id);
     }
 
     @GetMapping
-    public List<Thought> findAll() {
+    public List<ThoughtEntity> findAll() {
         return thoughtService.retrieveAllThoughts();
     }
 
     @PostMapping
-    public HttpEntity save(@Valid @RequestBody final Thought thought) {
-        Long thoughtId = thoughtService.save(thought);
+    public HttpEntity save(@Valid @RequestBody final ThoughtEntity thoughtEntity) {
+        Long thoughtId = thoughtService.save(thoughtEntity);
         return ResponseEntity.created(URI.create("/" + thoughtId)).build();
     }
 
@@ -40,15 +40,15 @@ public class ThoughtController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Object> updateThought(@RequestBody Thought thought, @PathVariable long id){
-        Optional<Thought> thoughtOptional = Optional.ofNullable(thoughtService.findById(id));
+    public ResponseEntity<Object> updateThought(@RequestBody ThoughtEntity thoughtEntity, @PathVariable long id){
+        Optional<ThoughtEntity> thoughtOptional = Optional.ofNullable(thoughtService.findById(id));
 
         if(!thoughtOptional.isPresent())
             return ResponseEntity.notFound().build();
 
-        thought.setId(id);
+        thoughtEntity.setId(id);
 
-        thoughtService.save(thought);
+        thoughtService.save(thoughtEntity);
 
         return ResponseEntity.noContent().build();
     }

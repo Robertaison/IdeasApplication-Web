@@ -1,4 +1,4 @@
-package br.com.thoughts.thoughts.domain;
+package br.com.thoughts.domain;
 
 import lombok.Data;
 import javax.persistence.*;
@@ -6,10 +6,10 @@ import javax.persistence.*;
 
 @Entity
 @Data
-public class Thought  {
+public class ThoughtEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment")
     private Long id;
 
     private String title;

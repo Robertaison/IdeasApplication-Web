@@ -1,4 +1,4 @@
-package br.com.thoughts.thoughts.utils;
+package br.com.thoughts.utils;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;

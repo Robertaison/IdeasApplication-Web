@@ -1,4 +1,4 @@
-package br.com.thoughts.thoughts;
+package br.com.thoughts;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package br.com.thoughts.thoughts.utils;
+package br.com.thoughts.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

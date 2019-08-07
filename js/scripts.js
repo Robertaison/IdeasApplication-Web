@@ -87,23 +87,6 @@ function deleteData(id) {
 	.then(response => response.json());
 }
 
-function updateId(id) {
-	try{
-		fetch(`http://localhost:8080/${id}`, {
-			method: 'PATCH',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(data)
-        });
-        alert('Alterações feitas com sucesso');
-	}catch{
-		alert('Não foi possível fazer alterações');
-	}
-}
-// ATE AQUI HEM
-
 
 // Get the modal
 var modal = document.getElementById('myModal');

@@ -1,7 +1,7 @@
 
 // getAllElements
 async function getElements(){
-	const res = await fetch('http://localhost:8080/');
+	const res = await fetch('https://sharing-thoughts.herokuapp.com');
 	const data = await res.json();
 	
 	createBaloon(data);

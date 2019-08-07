@@ -14,9 +14,6 @@ async function getElements(){
 		}
 	})
 	
-	// var teste = document.getElementById("aqui");
-	// var a = document.createTextNode(dados);
-	// teste.appendChild(a);
 }
 
 
@@ -156,9 +153,6 @@ function createBaloon(data){
 					<h1 class="baloon-title">${item.title}</h1>
 					<p id="thought-data">${item.data}</p> 
                 	<p class="baloon-description">${item.description}</p>
-                	<a class="baloon-modal" data-baloon="${item.id}" >
-                 		<img src="./images/menu.png" alt="" class="menu-modal">
-                	</a>
             	</div>
        		</div>`
 		 )

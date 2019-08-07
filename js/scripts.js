@@ -61,7 +61,7 @@ form.addEventListener('submit', e => {
 
 function post(data) {
     try {
-		fetch('http://localhost:8080/', {
+		fetch('https://sharing-thoughts.herokuapp.com', {
 			method: 'POST',
 			headers: {
 				'Accept': 'application/json',

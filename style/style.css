@@ -30,7 +30,7 @@ ul {
 }
 
 .title{
-    font-family: 'Josefin Slab', serif;
+    font-family: touch;
     font-size: 42px;
     margin: 0;
 }
@@ -92,7 +92,7 @@ ul {
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-family: baloon;
+    font-family: 'Josefin Slab', serif;
     font-size: 20px;
     width: 550px;
     height: 360px;
@@ -110,7 +110,7 @@ ul {
 #thought-data{
     margin-top: 0px;
     margin-bottom: 5px;
-    font-family: 'Josefin Slab', serif;
+    font-family: touch;
 }
 .baloon-description{
     font-size: x-large;

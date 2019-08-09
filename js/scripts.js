@@ -1,7 +1,7 @@
 
 // getAllElements
 async function getElements(){
-	const res = await fetch('https://sharing-ideas-api.herokuapp.com/');
+	const res = await fetch('http://localhost:8080');
 	const data = await res.json();
 	
 	createBaloon(data);
@@ -25,7 +25,7 @@ getElements();
 
 async function getElementsById(id) {
 	try {
-        const res = await fetch(`https://sharing-ideas-api.herokuapp.com/${id}`);
+        const res = await fetch(`http://localhost:8080/${id}`);
         const data = await res.json();
 		
 		const modalHeader = document.getElementById("title-modal");
@@ -58,7 +58,7 @@ form.addEventListener('submit', e => {
 
 function post(data) {
     try {
-		fetch('https://sharing-ideas-api.herokuapp.com', {
+		fetch('http://localhost:8080', {
 			method: 'POST',
 			headers: {
 				'Accept': 'application/json',

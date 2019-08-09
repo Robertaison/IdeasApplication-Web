@@ -1,11 +1,10 @@
 
 // getAllElements
 async function getElements(){
-	//const res = await fetch('https://sharing-ideas-api.herokuapp.com');
-	const res = await fetch('http://localhost:8080/');
+	const res = await fetch('https://sharing-ideas-api.herokuapp.com');
 	const data = await res.json();
 	
-	createBaloon(data);
+	createBaloon(data);y
 
 	var btnBaloons = document.getElementsByClassName("baloon-modal")
 	Array.from(btnBaloons).map(btn => {

@@ -132,10 +132,21 @@ function createBaloon(data){
 	const listComponent = data.map((item) => {
 		 return (
 			`<div class="baloon">
-            	<div class="baloon-content">            
-					<h1 class="baloon-title">${item.title}</h1>
-					<p id="thought-data">${item.data}</p> 
-                	<p class="baloon-description">${item.description}</p>
+				<div> 
+					<div class="baloon-author">           
+						<h1>${item.title}</h1>
+					</div>
+					<div class="baloon-content">
+						<div class="baloon-title">
+							<p id="thought-data">${item.data}</p> 
+						</div>
+						<div class="baloon-description>
+							<p">${item.description}</p>
+						</div>
+					</div>
+					<div class="baloon-date">
+						<p>${item.data}</p> 
+					</div>
             	</div>
        		</div>`
 		 )

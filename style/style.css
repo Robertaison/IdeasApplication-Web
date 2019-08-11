@@ -94,11 +94,12 @@ ul {
     text-align: center;
     font-family: 'baloon';
     font-size: 20px;
-    width: 550px;
-    height: 360px;
+    width: 40%;
+    height: 600px;
     background-image: url(../images/ballon.png);
     background-size: 100%;
     background-repeat: no-repeat;
+    background-position-y: center;
     margin: 0 50px;
 }
 

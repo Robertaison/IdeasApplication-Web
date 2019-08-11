@@ -133,19 +133,15 @@ function createBaloon(data){
 		 return (
 			`<div class="baloon">
 				<div> 
-					<div class="baloon-author">           
+					<div class="baloon-title">           
 						<h1>${item.title}</h1>
 					</div>
-					<div class="baloon-content">
-						<div class="baloon-title">
-							<p id="thought-data">${item.data}</p> 
-						</div>
-						<div class="baloon-description>
-							<p">${item.description}</p>
-						</div>
+					<div class="baloon-description">
+						<p">${item.description}</p>
 					</div>
-					<div class="baloon-date">
-						<p>${item.data}</p> 
+					<div class="baloon-details">
+						<p id='idea-data'>${item.data}</p>
+						<p id='idea-author'>${item.author}</p>
 					</div>
             	</div>
        		</div>`

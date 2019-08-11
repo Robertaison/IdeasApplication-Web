@@ -103,10 +103,10 @@ ul {
     margin: 0 50px;
 }
 
-/* .baloon-title{
-    font-family: touch;
-    margin: 0px; 
-} */
+.baloon-title{
+    font-weight: bolder;
+    text-shadow: whitesmoke 0.1em 0.1em 0.2em;
+}
 
 
 .baloon-description {
@@ -116,18 +116,22 @@ ul {
     padding: 10%;
 }
 
-.baloon-details{
+.baloon-details {
+    font-weight: bolder;
+    text-shadow: whitesmoke 0.1em 0.1em 0.2em;
     display: flex;
-    margin: 2% 0%;
+    margin: 3% 0%;
 }
 
 #idea-data{
-   width: 30%;
+    margin: -10px;
+    width: 30%;
 }
 
 #idea-author{
+    text-align: left;
     width: 50%;
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
 
 
@@ -202,7 +206,7 @@ ul {
 }
 
 .modal-body{
-
+    margin: 0px;
 }
 
 .menu-modal{

@@ -103,23 +103,33 @@ ul {
     margin: 0 50px;
 }
 
-.baloon-title{
-    margin-top: 50px;
-    margin-bottom: 2px;
+/* .baloon-title{
+    font-family: touch;
+    margin: 0px; 
+} */
+
+
+.baloon-description {
+    margin-top: 15%;
+    height: 45%;
+    margin-bottom: -5%;
+    padding: 10%;
 }
 
-#thought-data{
-    margin-top: 0px;
-    margin-bottom: 5px;
-    font-family: touch;
+.baloon-details{
+    display: flex;
+    margin: 2% 0%;
 }
-.baloon-description{
-    font-size: x-large;
-    padding: 0px 50px 0px 50px;
-    margin: 0px;
-    width: 80%;
-    height: 130px;
+
+#idea-data{
+   width: 30%;
 }
+
+#idea-author{
+    width: 50%;
+    margin: 20px 0px;
+}
+
 
 @media screen and (max-width: 660px) {
     .baloon-title{

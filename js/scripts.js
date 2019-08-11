@@ -132,7 +132,6 @@ function createBaloon(data){
 	const listComponent = data.map((item) => {
 		 return (
 			`<div class="baloon">
-				<div> 
 					<div class="baloon-title">           
 						<h1>${item.title}</h1>
 					</div>
@@ -143,7 +142,6 @@ function createBaloon(data){
 						<p id='idea-data'>${item.data}</p>
 						<p id='idea-author'>${item.author}</p>
 					</div>
-            	</div>
        		</div>`
 		 )
 		}).join('')

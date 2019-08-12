@@ -1,7 +1,7 @@
 
 // getAllElements
 async function getElements(){
-	const res = await fetch('http://localhost:8080');
+	const res = await fetch('https://sharing-ideas-api.herokuapp.com/');
 	const data = await res.json();
 	
 	createBaloon(data);
@@ -59,7 +59,7 @@ form.addEventListener('submit', e => {
 
 function post(data) {
     try {
-		fetch('http://localhost:8080', {
+		fetch('https://sharing-ideas-api.herokuapp.com', {
 			method: 'POST',
 			headers: {
 				'Accept': 'application/json',

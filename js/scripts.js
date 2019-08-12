@@ -47,8 +47,9 @@ form.addEventListener('submit', e => {
 	const title = document.getElementById('title').value;
 	const humor = document.getElementById('humorPost').value;
 	const description = document.getElementById('description').value;
+	const author = document.getElementById('author').value;
     
-    const data = { title, description, humor };
+    const data = { title, description, humor, author };
 	
 	post(data);
     getElements();

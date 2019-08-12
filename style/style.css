@@ -395,4 +395,13 @@ textarea{
     font-size: 14px;
     border-radius: 6px;
     box-shadow: 2px 2px 8px rgba(black, .3);
-  }
+}
+
+#autor{
+    margin-top: 2%;
+}
+  
+#author {
+    width: 90%;
+    margin: 2%; 
+}

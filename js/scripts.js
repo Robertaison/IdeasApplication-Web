@@ -19,28 +19,6 @@ async function getElements(){
 
 getElements();
 
-// PO TSON AQUI
-
-
-
-async function getElementsById(id) {
-	try {
-        const res = await fetch(`http://localhost:8080/${id}`);
-        const data = await res.json();
-		
-		const modalHeader = document.getElementById("title-modal");
-		modalHeader.innerHTML = data.title;
-        const input = document.getElementById("title-thought");
-        input.placeholder = data.title;   
-        const inputDescription = document.getElementById("description-thought");
-		inputDescription.placeholder = data.description;
-		const inputId = document.getElementById('hidden-id');
-		inputId.value = id;
-    } catch (error) {
-        alert('Falha ao conectar com o banco!')
-    }
-}
-
 
 const form = document.getElementById('formulario');
 form.addEventListener('submit', e => {
@@ -69,23 +47,8 @@ function post(data) {
         });
         alert('Pronto! Obrigado por colaborar!');
     } catch (error) {
-        alert('Falha ao conectar com o banco!', error);
+        alert('Falha ao comunicar com backend!', error);
     }
-}
-
-const deletar = document.getElementById('delete');
-deletar.onclick = function (e){
-	const id = document.getElementById('hidden-id').value;
-	deleteData(id);
-    getElements();
-	e.preventDefault;
-}
-
-function deleteData(id) {
-	return fetch(`http://localhost:8080/${id}`, {
-	  method: 'delete'
-	})
-	.then(response => response.json());
 }
 
 
